@@ -1,0 +1,6 @@
+.vscode
+.DS_Store
+*.out
+tempCodeRunnerFile
+main.c
+main

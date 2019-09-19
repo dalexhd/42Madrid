@@ -1,0 +1,5 @@
+Credentials cache: API:E75F6B2E-DCBB-4378-9B1E-C46C1BEB3FE5
+        Principal: aborboll@42MADRID.COM
+
+  Issued                Expires               Principal
+Sep  2 17:40:30 2019  Sep  3 03:40:27 2019  krbtgt/42MADRID.COM@42MADRID.COM
