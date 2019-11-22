@@ -3,3 +3,6 @@
 *.out
 tempCodeRunnerFile
 main
+main.dSYM
+*.o
+.git

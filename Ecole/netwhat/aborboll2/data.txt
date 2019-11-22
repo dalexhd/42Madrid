@@ -1,0 +1,7 @@
+
+The delivery of data to the destination CAN be guaranteed in TCP
+DHCP uses UDP
+UDP supports broadcasting
+TCP isn't a datagram oriented protocol
+
+Application - Presentation - Session - Transport - Network - Data Link - Physical
