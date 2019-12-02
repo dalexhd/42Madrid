@@ -6,7 +6,7 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 13:50:46 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/30 23:15:48 by aborboll         ###   ########.fr       */
+/*   Updated: 2019/12/01 14:06:09 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strnew(size_t size);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strchr(const char *s, int c);
-size_t	ft_return(char **cache, char **line, int fd, int ret);
-int		ft_new_line(char **cache, char **line, int fd);
+void	ft_strdel(char **str);
+int		ft_new_line(char **cache, char **line, int fd, char *buff);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 17:21:23 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/30 23:11:14 by aborboll         ###   ########.fr       */
+/*   Updated: 2019/12/01 13:08:08 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-size_t	ft_return(char **cache, char **line, int fd, int ret)
+void	ft_strdel(char **str)
 {
-	if (ret < 0)
-		return (-1);
-	else if (ret == 0 && (cache[fd] == NULL || cache[fd][0] == '\0'))
+	if (str)
 	{
-		*line = ft_strdup("");
-		return (0);
+		free(*str);
+		*str = NULL;
 	}
-	return (ft_new_line(cache, line, fd));
+	return ;
 }

@@ -6,22 +6,15 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 13:50:46 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/30 23:18:07 by aborboll         ###   ########.fr       */
+/*   Updated: 2019/12/01 14:06:04 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <string.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <inttypes.h>
 # include <unistd.h>
-# include <strings.h>
-# include <limits.h>
-# include <fcntl.h>
 
 typedef unsigned char	t_uchar;
 typedef unsigned short	t_ushort;
@@ -35,9 +28,8 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strnew(size_t size);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strchr(const char *s, int c);
-size_t	ft_return(char **cache, char **line, int fd, int ret);
-int		ft_new_line(char **cache, char **line, int fd);
+void	ft_strdel(char **str);
+int		ft_new_line(char **cache, char **line, int fd, char *buff);
 
 #endif
