@@ -6,13 +6,13 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 13:50:38 by aborboll          #+#    #+#             */
-/*   Updated: 2019/12/01 14:01:20 by aborboll         ###   ########.fr       */
+/*   Updated: 2019/12/02 19:23:49 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t		ft_strlen(const char *s)
 {
 	int i;
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char		*ft_strchr(const char *s, int c)
 {
 	char	*str;
 
@@ -36,18 +36,17 @@ char	*ft_strchr(const char *s, int c)
 	return (str);
 }
 
-int		ft_new_line(char **cache, char **line, int fd, char *buff)
+static int	ft_new_line(char **cache, char **line, int fd)
 {
 	int		len;
 
-	free(buff);
 	len = 0;
 	while (cache[fd][len] != '\n' && cache[fd][len] != '\0')
 		len++;
 	if (cache[fd][len] == '\n')
 	{
 		*line = ft_substr(cache[fd], 0, len);
-		cache[fd] = ft_strdup(cache[fd] + len + 1);
+		cache[fd] = ft_strdup(&cache[fd][len + 1]);
 		if (cache[fd][0] == '\0')
 			ft_strdel(&cache[fd]);
 	}
@@ -60,15 +59,27 @@ int		ft_new_line(char **cache, char **line, int fd, char *buff)
 	return (1);
 }
 
-int		get_next_line(int fd, char **line)
+static	int	ft_return(char **cache, char **line, int fd, int ret)
 {
-	static	char	*cache[255];
+	if (ret < 0)
+		return (-1);
+	if (ret == 0 && cache[fd] == NULL)
+	{
+		*line = ft_strdup("");
+		return (0);
+	}
+	return (ft_new_line(cache, line, fd));
+}
+
+int			get_next_line(int fd, char **line)
+{
+	static	char	*cache[4096];
 	char			*buff;
 	char			*tmp;
 	int				ret;
 
-	buff = malloc((sizeof(char) * BUFFER_SIZE) + 1);
-	if (fd < 0 || line == NULL)
+	if (fd < 0 || line == NULL || BUFFER_SIZE < 1
+		|| !(buff = malloc((sizeof(char) * BUFFER_SIZE) + 1)))
 		return (-1);
 	while ((ret = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
@@ -81,10 +92,6 @@ int		get_next_line(int fd, char **line)
 		if (ft_strchr(buff, '\n'))
 			break ;
 	}
-	if (ret < 0)
-		return (-1);
-	else if (ret == 0 && (cache[fd] == NULL || cache[fd][0] == '\0')
-			&& (*line = ft_strdup("")))
-		return (0);
-	return (ft_new_line(cache, line, fd, buff));
+	free(buff);
+	return (ft_return(cache, line, fd, ret));
 }

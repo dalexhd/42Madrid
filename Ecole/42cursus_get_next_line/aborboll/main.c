@@ -6,11 +6,14 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 13:55:50 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/30 22:47:02 by aborboll         ###   ########.fr       */
+/*   Updated: 2019/12/02 19:29:18 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
 
 void	ft_putstr(char *s)
 {
@@ -28,9 +31,10 @@ int		main(void)
 {
 	int		fd;
 	char	*line;
+	int		num;
 
-	fd = open("tests/test2", O_RDONLY);
-	while ((get_next_line(fd, &line)) == 1)
+	fd = open("tests/test3", O_RDONLY);
+	while ((num = ((get_next_line(fd, &line)) == 1)))
 	{
 		ft_putstr(line);
 		write(1, "\n", 1);
