@@ -6,7 +6,7 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 20:45:27 by aborboll          #+#    #+#             */
-/*   Updated: 2020/02/08 23:21:02 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/02/09 06:18:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-#include <fcntl.h>
+# include <fcntl.h>
 
 typedef unsigned char			t_uchar;
 typedef signed char				t_schar;
@@ -70,7 +70,7 @@ void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
-int				ft_numlen(long nb);
+int				ft_numlen(t_ullong nb);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 char			*ft_strstr(const char *haystack, const char *needle);

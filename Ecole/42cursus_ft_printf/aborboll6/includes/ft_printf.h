@@ -6,7 +6,7 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 17:55:19 by aborboll          #+#    #+#             */
-/*   Updated: 2020/02/06 16:34:46 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/02/09 11:37:44 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ enum			e_flags
 	F_Zero,
 	F_Hash,
 	F_Trash,
-	F_Argv0,
+	F_Argv0
 };
 
 enum			e_lengths
@@ -75,7 +75,7 @@ void			init_struct(t_info *info, char **str, va_list *args);
 void			reinit(t_info *info);
 void			reinit_lengths(t_info *info);
 
-void			do_number(t_info *info);
+void			do_number(t_info *info, int neg);
 void			do_string(t_info *info);
 void			do_address(t_info *info);
 void			do_char(t_info *info);

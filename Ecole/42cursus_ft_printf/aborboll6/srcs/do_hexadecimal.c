@@ -6,7 +6,7 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 18:14:57 by aborboll          #+#    #+#             */
-/*   Updated: 2020/02/08 17:50:20 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/02/10 17:15:24 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void		apply_hash(t_info *info, int flag, int iszero)
 			info->res = ft_strjoin_free(
 				ft_strdup(info->type == 'X' ? "0X" : "0x"), info->res);
 		else if ((((!info->flags[F_Zero] || info->flags[F_Neg]) && !flag) ||
-		(info->flags[F_Zero] && info->precision > 0 && !flag)))
+		(info->flags[F_Zero] && info->precision >= 0 && !flag)))
 			info->res = ft_strjoin_free(
 				ft_strdup(info->type == 'X' ? "0X" : "0x"), info->res);
 	}
@@ -85,6 +85,10 @@ void			do_hexadecimal(t_info *info)
 		info->res = ft_utoabase((t_llong)va_arg(info->args[0], t_llong), 16);
 	else if (info->length[L_ulong])
 		info->res = ft_utoabase((t_ulong)va_arg(info->args[0], t_ulong), 16);
+	else if (info->length[L_char])
+		info->res = ft_utoabase((t_uchar)va_arg(info->args[0], t_uint), 16);
+	else if (info->length[L_short])
+		info->res = ft_utoabase((t_ushsort)va_arg(info->args[0], t_uint), 16);
 	else
 		info->res = ft_utoabase((t_uint)va_arg(info->args[0], t_uint), 16);
 	if (info->type == 'x' || info->type == 'X')

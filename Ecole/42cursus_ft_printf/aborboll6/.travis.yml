@@ -1,0 +1,14 @@
+os:
+  - osx
+  - linux
+language:
+  - c
+compiler:
+  - gcc
+script:
+  - make test
+email:
+  on_success: never
+  on_failure: never
+notifications:
+  email: false

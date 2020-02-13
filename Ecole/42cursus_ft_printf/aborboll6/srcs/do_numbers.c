@@ -6,7 +6,7 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 05:44:29 by aborboll          #+#    #+#             */
-/*   Updated: 2020/02/08 17:40:06 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/02/10 16:48:53 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void			apply_flags(t_info *info, int isneg)
 	{
 		if (info->flags[F_Space] && !info->flags[F_Plus] && info->type != 'u')
 			info->res = ft_strjoin_free(ft_strdup(" "), info->res);
+		if (info->flags[F_Plus] && info->type != 'u')
+			info->res = ft_strjoin_free(ft_strdup("+"), info->res);
 	}
 	else
 		info->res = ft_strjoin_free(ft_strdup("-"), info->res);
 	if (info->flags[F_Hash] && ft_strcmp(info->res, "0") && info->type != 'o')
 		info->res = ft_strjoin_free(
 			ft_strdup(info->type == 'X' ? "0X" : "0x"), info->res);
-	if (info->flags[F_Plus] && info->res[0] != '-' && info->type != 'u')
-		info->res = ft_strjoin_free(ft_strdup("+"), info->res);
 }
 
 void			apply_width(t_info *info, int isneg, int len)
@@ -79,11 +79,11 @@ void			apply_width(t_info *info, int isneg, int len)
 		apply_flags(info, isneg);
 }
 
-void			do_number(t_info *info)
+void			do_number(t_info *info, int neg)
 {
-	int		neg;
-
-	if (info->length[L_longlong])
+	if (info->type == 'u' && info->length[L_longlong])
+		info->res = ft_utoabase((t_ullong)va_arg(info->args[0], t_ullong), 10);
+	else if (info->length[L_longlong])
 		info->res = ft_itoa_llong((t_llong)va_arg(info->args[0], t_llong));
 	else if (info->length[L_long])
 		info->res = ft_itoa_long((t_long)va_arg(info->args[0], t_long));
@@ -103,7 +103,7 @@ void			do_number(t_info *info)
 		info->res = ft_itoa(va_arg(info->args[0], int));
 	neg = apply_negative(info);
 	apply_precision(info);
-	if (!info->flags[F_Zero] || info->flags[F_Neg] || info->precision > 0)
+	if (!info->flags[F_Zero] || info->flags[F_Neg] || info->precision >= 0)
 		apply_flags(info, neg);
 	apply_width(info, neg, ft_strlen(info->res));
 }

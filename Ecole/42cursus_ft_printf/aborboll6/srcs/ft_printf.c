@@ -6,7 +6,7 @@
 /*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 18:43:19 by aborboll          #+#    #+#             */
-/*   Updated: 2020/02/04 18:04:02 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/02/09 11:37:28 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	check_and_print(t_info *info)
 		if (info->type == 's' || info->type == 'S')
 			do_string(info);
 		if (info->type == 'i' || info->type == 'd' || info->type == 'u')
-			do_number(info);
+			do_number(info, 0);
 		else if (info->type == 'o' || info->type == 'O')
 			do_octal(info);
 		else if (info->type == 'x' || info->type == 'X')
