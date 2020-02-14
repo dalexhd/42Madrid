@@ -1,4 +1,4 @@
-<img src="/assets/images/42-logo.png" alt="logo" width="100">
+<img src="/docs/assets/images/42-logo.png" alt="logo" width="100">
 
 > All my 42 life in a single light Github repository.
 
