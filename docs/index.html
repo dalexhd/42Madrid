@@ -65,6 +65,11 @@
   <script src="//unpkg.com/docsify-copy-code@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
   <script src="assets/js/libs/domAnimator.js"></script>
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
   <script src="assets/js/init.js"></script>
   <script>
     setEnvioroment();
