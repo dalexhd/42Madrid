@@ -1,0 +1,13 @@
+.DS_Store
+.vscode
+*.o
+*.a
+main.c
+valgrind_out
+testers
+results.txt
+output.txt
+test.mine
+test.libc
+history.csv
+*.dSYM
