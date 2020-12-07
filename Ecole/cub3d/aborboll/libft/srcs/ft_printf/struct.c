@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   struct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 15:29:52 by aborboll          #+#    #+#             */
-/*   Updated: 2020/03/10 15:53:50 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/08/28 17:08:59 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../../includes/ft_printf.h"
 
 void	init_struct(t_info *info, char **str, va_list *args)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 16:35:18 by aborboll          #+#    #+#             */
-/*   Updated: 2020/01/07 15:51:17 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/08/28 10:36:23 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	d = (t_uchar *)dst;
 	s = (t_uchar *)src;
 	i = 0;
-	if (dst == '\0' && src == '\0')
+	if (*d == '\0' && *s == '\0')
 		return (0);
 	if (!n || dst == src)
 		return (dst);

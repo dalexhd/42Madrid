@@ -1,8 +1,6 @@
 .DS_Store
-.vscode
 *.o
 *.a
-main.c
 valgrind_out
 testers
 results.txt
@@ -10,4 +8,8 @@ output.txt
 test.mine
 test.libc
 history.csv
-*.dSYM
+cub3D
+main_test.c
+*.bmp
+.vscode
+README.md

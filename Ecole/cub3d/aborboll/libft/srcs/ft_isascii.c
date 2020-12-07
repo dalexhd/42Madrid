@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:41:36 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/10 20:25:27 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/09/05 10:08:30 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /*
 ** @author	aborboll
@@ -22,6 +22,6 @@
 t_bool	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }

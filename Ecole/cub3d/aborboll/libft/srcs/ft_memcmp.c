@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:41:51 by aborboll          #+#    #+#             */
-/*   Updated: 2020/02/09 06:19:38 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/10/13 10:59:12 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /*
 ** @param	{void *s1}		Memory area s1
@@ -32,7 +32,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	c = (t_uchar*)s2;
 	if (n == 0)
 		return (0);
-	while ((s[i] == c[i]) && i < n - 1)
+	while (i < n - 1 && (s[i] == c[i]))
 		i++;
 	return (s[i] - c[i]);
 }
