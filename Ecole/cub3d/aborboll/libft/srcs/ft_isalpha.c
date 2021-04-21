@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:41:33 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/11 22:54:15 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/09/05 10:08:36 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /*
 ** @author	aborboll
@@ -22,7 +22,7 @@
 t_bool	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
+		return (TRUE);
 	else
-		return (0);
+		return (FALSE);
 }

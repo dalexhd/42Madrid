@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 18:43:19 by aborboll          #+#    #+#             */
-/*   Updated: 2020/03/10 15:53:42 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/10/14 11:34:40 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../../includes/ft_printf.h"
 
 void	print(t_info *info)
 {
@@ -19,7 +19,7 @@ void	print(t_info *info)
 	i = 0;
 	if (info->flags[F_Neg] && info->flags[F_Trash])
 		ft_putchar((char)0);
-	while (info->res != '\0' && info->res[i])
+	while (*info->res != '\0' && info->res[i])
 	{
 		ft_putchar((char)info->res[i]);
 		i++;
@@ -48,7 +48,7 @@ void	check_and_print(t_info *info)
 		else if (info->type == 'o' || info->type == 'O')
 			do_octal(info);
 		else if (info->type == 'x' || info->type == 'X')
-			do_hexadecimal(info);
+			do_hex(info);
 		else if (info->type == 'c' || info->type == 'C')
 			do_char(info);
 		else if (info->type == 'p' || info->type == 'P')

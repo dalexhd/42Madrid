@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:41:42 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/11 22:54:15 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/09/05 10:08:18 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /*
 ** @author	aborboll
@@ -22,7 +22,7 @@
 t_bool	ft_isprint(int c)
 {
 	if (c < ' ' || c > '~')
-		return (0);
+		return (FALSE);
 	else
-		return (1);
+		return (TRUE);
 }

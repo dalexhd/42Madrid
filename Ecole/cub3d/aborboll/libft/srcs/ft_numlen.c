@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 17:05:18 by aborboll          #+#    #+#             */
-/*   Updated: 2020/02/09 04:11:12 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/08/28 17:08:59 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** @author	aborboll
-** @param	{long nb}	The number
+** @param	{t_llong nb}	The number
 ** @desc	Get number length
 ** @returns	int
 */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-int		ft_numlen(t_ullong nb)
+int		ft_numlen(t_llong nb)
 {
 	int		i;
 

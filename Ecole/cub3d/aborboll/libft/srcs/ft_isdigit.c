@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:41:40 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/11 22:54:15 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/09/05 10:08:25 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /*
 ** @author	aborboll
@@ -22,6 +22,6 @@
 t_bool	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }

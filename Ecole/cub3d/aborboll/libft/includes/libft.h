@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 20:45:27 by aborboll          #+#    #+#             */
-/*   Updated: 2020/03/10 15:59:57 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/10/23 10:28:51 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,25 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
 # include <fcntl.h>
+# include <math.h>
 
-typedef unsigned char			t_uchar;
-typedef signed char				t_schar;
-typedef unsigned short			t_ushsort;
-typedef short					t_shsort;
-typedef short int				t_shsortint;
-typedef unsigned int			t_uint;
-typedef long int				t_long;
-typedef long long int			t_llong;
-typedef unsigned long int		t_ulong;
-typedef unsigned long long int	t_ullong;
-typedef int						t_bool;
-typedef long double				t_ldouble;
+/*
+** Incluimos nuestras librerias.
+*/
+# include "ft_alert.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
+
+/*
+** Incluimos nuestros types.
+*/
+# include "types.h"
+
+/*
+** Incluimos las constantes.
+*/
+# include "constants.h"
 
 typedef struct	s_list
 {
@@ -59,7 +63,6 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putnbr(int n);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putstr(char *s);
-int				ft_get_next_line(int fd, char **line, t_ullong buffer_size);
 void			ft_strdel(char **str);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putendl(char *s);
@@ -71,7 +74,7 @@ void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
-int				ft_numlen(t_ullong nb);
+int				ft_numlen(t_llong nb);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 char			*ft_strstr(const char *haystack, const char *needle);
@@ -94,11 +97,14 @@ size_t			ft_strlen(const char *s);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
-int				ft_strhas(const char *s, int c);
 char			*ft_strtrim(char const *s1, char const *set);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_abs(int num);
+int				ft_floor(int num);
+t_ldouble		ft_deg_to_rad(int deg);
+int				ft_max(int nb1, int nb2);
+int				ft_min(int nb1, int nb2);
 void			ft_strto(char *str, int (*f)(int));
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
@@ -111,10 +117,12 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 				void (*del)(void *));
 char			*ft_utoabase(t_ullong n, int base);
-
-/*
-** Incluimos el ft_printf después de la declaración de las funciones que utiliza.
-*/
-# include "ft_printf.h"
-
+t_bool			ft_strevery(char const *s, t_bool (*f)(int));
+void			ft_split_del(char **ptr);
+char			*ft_strreplace(const char *haystack, const char *needle,
+				char *str);
+t_bool			ft_strendswith(const char *haystack, const char *needle);
+size_t			ft_countchars(char const *str, char c);
+t_llong			ft_atoll(const char *str);
+size_t			ft_countnumbers(char const *str);
 #endif

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:49:12 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/07 18:31:37 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/10/13 11:00:23 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
@@ -19,7 +19,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 
 	i = ft_strlen(s1);
 	z = 0;
-	while (s2[z] != '\0' && z < n)
+	while (z < n && s2[z] != '\0')
 	{
 		s1[z + i] = s2[z];
 		z++;

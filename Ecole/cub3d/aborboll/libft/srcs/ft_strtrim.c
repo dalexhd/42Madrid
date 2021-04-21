@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:42:59 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/14 18:07:51 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/10/11 23:04:53 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -18,16 +18,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	char	*str;
 
-	if (s1 == '\0' || set == '\0')
-		return (0);
 	i = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (s1[i] != '\0' && ft_strchr(set, s1[i]) != NULL)
 		i++;
 	len = ft_strlen(&s1[i]);
 	if (len)
 		while (s1[i + len - 1] && ft_strchr(set, s1[i + len - 1]) != NULL)
 			len--;
-	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(str = ft_strnew(len)))
 		return (NULL);
 	str = ft_strncpy(str, &s1[i], len);
 	str[len] = '\0';

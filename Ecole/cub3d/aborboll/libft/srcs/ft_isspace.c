@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aborboll <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:14:46 by aborboll          #+#    #+#             */
-/*   Updated: 2019/11/11 22:54:15 by aborboll         ###   ########.fr       */
+/*   Updated: 2020/09/05 10:08:11 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /*
 ** @author	aborboll
@@ -27,6 +27,6 @@ t_bool	ft_isspace(int c)
 		c == '\r' ||
 		c == '\f' ||
 		c == '\v')
-		return (1);
-	return (0);
+		return (TRUE);
+	return (FALSE);
 }
