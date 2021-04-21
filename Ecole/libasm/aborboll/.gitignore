@@ -1,0 +1,7 @@
+# Ignore object folder
+obj
+libasm.a
+libasm
+libft
+libasm_test
+42libasm_tester
